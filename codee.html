@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quotes Generator</title>
+</head>
+<body>
+ 
+  <div class="container">
+    <div id="inpSection">
+      <div class="amt">
+      <h1 id="timm">Timer:<span id="time">60</span>Sec</h1>
+      <h1 id="header"></h1>
+      
+  </div>
+  <div class="button-area">
+    <button id="start" class="btn">Start</button>
+    <button id="reset" class="btn">stop</button></div>
+ 
+    </div>
+ 
+  </div>
+   
+ 
+    <script>
+         
+        var start = document.getElementById('start');
+        var reset = document.getElementById('reset');
+ 
+       
+ 
+       
+      //  var startTimer = null;
+ 
+
+       function timer(){
+         
+       }
+ 
+       function stopTimer(){
+        clearInterval(startTimer);
+       }
+   
+       start.addEventListener('click', function(){
+           function startInterval(){
+            startTimer = setInterval(function(){
+              timer();
+            }, 4000);
+           }
+           
+           var timer = 60
+          var xyz = setInterval(()=>{
+          document.getElementById('time').innerHTML = --timer;
+          if( timer==0){
+            clearInterval(xyz)
+          }},4000);
+ 
+
+          setInterval(()=>{
+          var randText = Math.floor(Math.random()*colors.length)
+         document.getElementById('header').innerHTML = colors[randText];
+          },3000)
+ 
+         var colors = [
+         "EVERYTHING IS GOING TO BE ALRIGHT",
+    "You Didn't Come This Far To Only Come This Far",
+    "Go up and never stop",
+    "You can do whatever you want today",
+    "DON'T CALL IT A DREAM CALL IT A PLAN ",
+    "OVER THINKING KILLS YOUR HAPPINESS",
+    "FAIL YOUR WAY TO SUCCESS",
+    "REMEMBER WHY YOU STATRED",
+    "DIFFCULT ROADS LEAD TO BEAUTIFUL DESTINATION",
+    "You never know what someone is going through. Be kind. Always",
+    "MAKE SURE THAT WHAT YOU CHASE IN LIFE IS WORTH DYING FOR",
+    "Don't be afraid to choose a different path than others",
+    "DO GOOD INTENTION, NOT FOR ATTENTION",
+    "TOO MUCH TRUST MIGHT KILL YOU",
+    "When you offend people say SORRY!",
+    "STOP WISHING START DOING.",
+    
+         ]
+          document.getElementById('header').innerHTML[0]
+   
+ 
+          // let color = '#';
+          //  color += Math.random().toString(16).slice(2,8);
+          //  header.style.backgroundColor = color;
+          // console.log(color)
+ 
+           
+         
+       })
+
+       reset.addEventListener('click', function(){
+ location.reload()
+       
+      
+ })
+
+
+
+
+
+
+
+      //  reset.addEventListener('click', function(){
+      //      function stopInterval(){
+      //       resetTimer = setInterval(function(){
+      //         timer();
+             
+      //       }, );
+      //      }
+           
+       
+ 
+      //   })
+ 
+    </script>
+</body>
+</html>
