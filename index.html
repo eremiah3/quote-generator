@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="class.css">
+  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
   </div>
   <div class="button-area">
     <button id="start" class="btn">Start</button>
-    <button id="reset" class="btn">stop</button></div>
+    <button id="reset" class="btn-stop">stop</button></div>
  
     </div>
  
@@ -33,7 +33,7 @@
        
  
        
-      //  var startTimer = null;
+  
  
 
        function timer(){
@@ -53,8 +53,8 @@
            
            var timer = 60
           var xyz = setInterval(()=>{
-          document.getElementById('time').innerHTML = --timer;
-          if( timer===0){
+          document.getElementById('time').innerHTML = timer--;
+          if( timer===-1){
             clearInterval(xyz)
            
           }
@@ -64,7 +64,10 @@
           setInterval(()=>{
           var randText = Math.floor(Math.random()*colors.length)
          document.getElementById('header').innerHTML = colors[randText];
-     
+         if( timer===-1){
+            clearInterval(colors)
+           
+          }
           },3000)
  
          var colors = [
@@ -84,17 +87,15 @@
     "TOO MUCH TRUST MIGHT KILL YOU",
     "When you offend people say SORRY!",
     "STOP WISHING START DOING.",
+    "LEARN FROM YOUR LOSSES YOU PAID FOR THEM.",
+    "NOBODY CARES UNLESS YOU'RE RICH, POPULAR OR DEAD.",
+    "DON'T ALLOW SOMEONE ELSE TO KILL YOUR DREAMS.",
+    "HOW YOU SEE THE WORLD DEPENDS ON HOW YOU LOOK AT IT.",
+    "STAY CLOSE TO PEOPLE WHO WANT MORE FOR YOU NOT MORE FROM YOU.",
+    
     
          ]
           document.getElementById('header').innerHTML[0]
-   
- 
-          // let color = '#';
-          //  color += Math.random().toString(16).slice(2,8);
-          //  header.style.backgroundColor = color;
-          // console.log(color)
- 
-           
          
        })
 
@@ -103,24 +104,6 @@
        
       
  })
-
-
-
-
-
-
-
-      //  reset.addEventListener('click', function(){
-      //      function stopInterval(){
-      //       resetTimer = setInterval(function(){
-      //         timer();
-             
-      //       }, );
-      //      }
-           
-       
- 
-      //   })
  
     </script>
 </body>
